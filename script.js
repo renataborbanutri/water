@@ -5,8 +5,8 @@ function calculateWaterIntake() {
     var activity = document.getElementById('activity').value;
 
     if (!age || !weight) {
-        console.error("Age and weight must be provided and must be numbers.");
-        document.getElementById('result').innerHTML = "Please enter valid age and weight.";
+        console.error("Idade e peso devem ser fornecidos e devem ser números.");
+        document.getElementById('result').innerHTML = "Insira a idade e o peso válidos.";
         return;
     }
 
@@ -17,7 +17,7 @@ function calculateWaterIntake() {
     var liters = Math.floor(waterIntake);
     var milliliters = Math.round((waterIntake - liters) * 1000);
 
-    document.getElementById('result').innerHTML = `Recommended daily water intake: ${liters} L e ${milliliters} ml.`;
+    document.getElementById('result').innerHTML = `Meta diária de água: ${liters} L e ${milliliters} ml.`;
 }
 
 function calculateBaseRequirement(age, weight, sex) {
