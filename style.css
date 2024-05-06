@@ -1,8 +1,13 @@
+body {
+    background: linear-gradient(to bottom, #ffe7e7, #fcdcdc);
+    font-family: Arial, sans-serif; /* Ensures the font is nice and readable */
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f8f8f8;
+    background-color: #fff;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
 }
@@ -13,7 +18,24 @@ header h1 {
 }
 
 .profile-pic {
-    height: 60px; /* Adjust based on your preference */
-    border-radius: 30px; /* Makes the image round */
+    height: 60px;
+    border-radius: 30px;
     margin-right: 10px;
+}
+
+/* Styles for the form and result */
+form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* Light background for the form for better readability */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#result {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
