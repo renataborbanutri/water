@@ -4,13 +4,24 @@ function calculateWaterIntake() {
     var sex = document.getElementById('sex').value;
     var activity = document.getElementById('activity').value;
 
+    if (!age || !weight) {
+        console.error("Age and weight must be provided and must be numbers.");
+        document.getElementById('result').innerHTML = "Please enter valid age and weight.";
+        return;
+    }
+
     var waterIntake = calculateBaseRequirement(age, weight, sex) + calculateActivityAddition(activity);
+    console.log(`Age: ${age}, Weight: ${weight}, Sex: ${sex}, Activity: ${activity}, Water Intake: ${waterIntake}`);
 
     document.getElementById('result').innerHTML = `Recommended daily water intake: ${waterIntake.toFixed(2)} liters.`;
 }
 
 function calculateBaseRequirement(age, weight, sex) {
     var base;
+
+    // Convert string input to numbers
+    age = parseInt(age, 10);
+    weight = parseFloat(weight);
 
     // Adjust base water requirement by age
     if (age < 18) {
