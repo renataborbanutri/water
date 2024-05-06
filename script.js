@@ -17,7 +17,7 @@ function calculateWaterIntake() {
     var liters = Math.floor(waterIntake);
     var milliliters = Math.round((waterIntake - liters) * 1000);
 
-    document.getElementById('result').innerHTML = `Recommended daily water intake: ${liters} liters and ${milliliters} milliliters.`;
+    document.getElementById('result').innerHTML = `Recommended daily water intake: ${liters} L e ${milliliters} ml.`;
 }
 
 function calculateBaseRequirement(age, weight, sex) {
