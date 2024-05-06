@@ -1,3 +1,14 @@
+function calculateWaterIntake() {
+    var age = document.getElementById('age').value;
+    var weight = document.getElementById('weight').value;
+    var sex = document.getElementById('sex').value;
+    var activity = document.getElementById('activity').value;
+
+    var waterIntake = calculateBaseRequirement(age, weight, sex) + calculateActivityAddition(activity);
+
+    document.getElementById('result').innerHTML = `Recommended daily water intake: ${waterIntake.toFixed(2)} liters.`;
+}
+
 function calculateBaseRequirement(age, weight, sex) {
     var base;
 
@@ -12,7 +23,7 @@ function calculateBaseRequirement(age, weight, sex) {
 
     // Adjust further based on sex
     if (sex === 'female') {
-        base *= 0.9; // adjust base intake by sex if necessary
+        base *= 0.9; // reduce intake by 10% for females
     }
 
     return base;
