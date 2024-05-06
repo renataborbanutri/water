@@ -13,7 +13,11 @@ function calculateWaterIntake() {
     var waterIntake = calculateBaseRequirement(age, weight, sex) + calculateActivityAddition(activity);
     console.log(`Age: ${age}, Weight: ${weight}, Sex: ${sex}, Activity: ${activity}, Water Intake: ${waterIntake}`);
 
-    document.getElementById('result').innerHTML = `Recommended daily water intake: ${waterIntake.toFixed(2)} liters.`;
+    // Split the water intake into liters and milliliters
+    var liters = Math.floor(waterIntake);
+    var milliliters = Math.round((waterIntake - liters) * 1000);
+
+    document.getElementById('result').innerHTML = `Recommended daily water intake: ${liters} liters and ${milliliters} milliliters.`;
 }
 
 function calculateBaseRequirement(age, weight, sex) {
